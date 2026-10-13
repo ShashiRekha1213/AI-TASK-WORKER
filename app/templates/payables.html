@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Payables - FinOps Portal</title>
+<style>body{font-family:sans-serif;max-width:800px;margin:40px auto}table{border-collapse:collapse;width:100%}
+td,th{border:1px solid #ccc;padding:6px;text-align:left}</style></head>
+<body><h1>Payables</h1><a href="/payables/new">+ New payable</a>
+<table id="payables-table"><tr><th>ID</th><th>Vendor</th><th>Invoice #</th><th>Amount</th><th>Due date</th></tr>
+{% for r in rows %}<tr><td>{{ r.id }}</td><td>{{ r.vendor }}</td><td>{{ r.invoice_no }}</td><td>{{ '%.2f' % r.amount }}</td><td>{{ r.due_date }}</td></tr>
+{% else %}<tr><td colspan="5">No payables yet.</td></tr>{% endfor %}</table></body></html>
